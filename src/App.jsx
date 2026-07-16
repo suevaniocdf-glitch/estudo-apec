@@ -387,7 +387,7 @@ function PainelPastor({data,setData,distritoId}){
       {aba==="preenchimento" && (()=>{
         const now=new Date();
         const mes=now.getMonth()+1, ano=now.getFullYear(), dia=now.getDate();
-        const aberto = (mes === 7 || dia <= 15) || demo;⁠
+        const aberto = (mes === 7 || dia <=15 || demo;
         const cap=(s)=>s.charAt(0).toUpperCase()+s.slice(1);
         const nomeMes=cap(MESEXT[mes-1]);
         const proxMes=cap(MESEXT[mes%12]);
