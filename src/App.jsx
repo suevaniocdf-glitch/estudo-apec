@@ -387,7 +387,7 @@ function PainelPastor({data,setData,distritoId}){
       {aba==="preenchimento" && (()=>{
         const now=new Date();
         const mes=now.getMonth()+1, ano=now.getFullYear(), dia=now.getDate();
-        const aberto = dia<=15 || demo;
+        const aberto = (mes === 7 || dia <= 15) || demo;⁠
         const cap=(s)=>s.charAt(0).toUpperCase()+s.slice(1);
         const nomeMes=cap(MESEXT[mes-1]);
         const proxMes=cap(MESEXT[mes%12]);
@@ -399,7 +399,7 @@ function PainelPastor({data,setData,distritoId}){
               <div style={{fontFamily:"Sora,sans-serif",fontSize:16,fontWeight:600,color:C.ink}}>Preenchimento de estudos — {nomeMes}</div>
               <div style={{marginTop:14,background:C.bg,borderRadius:12,padding:18,textAlign:"center"}}>
                 <div style={{fontSize:14,fontWeight:600,color:C.ink}}>Preenchimento de {nomeMes} encerrado.</div>
-                <div style={{fontSize:12.5,color:C.muted,marginTop:6}}>A janela vai do dia 01 ao dia 15 de cada mês. Reabre em 01 de {proxMes}.</div>
+                <div style={{fontSize:12.5,color:C.muted,marginTop:6}}>A janela de julho vai até o final do mês. Reabre em 01 de {proxMes}.</div>
                 <label style={{display:"inline-flex",alignItems:"center",gap:7,marginTop:14,fontSize:12.5,color:C.faint,cursor:"pointer"}}><input type="checkbox" checked={demo} onChange={e=>setDemo(e.target.checked)}/> Simular janela aberta (demonstração)</label>
               </div>
             </Card>
@@ -411,7 +411,7 @@ function PainelPastor({data,setData,distritoId}){
           <div style={{display:"flex",flexWrap:"wrap",gap:10,alignItems:"center"}}>
             <div style={{marginRight:"auto"}}>
               <div style={{fontFamily:"Sora,sans-serif",fontSize:16,fontWeight:600,color:C.ink}}>Preenchimento de estudos — {nomeMes}</div>
-              <div style={{fontSize:12,color:C.faint,marginTop:2}}>Janela mensal: dia 01 ao dia 15</div>
+              <div style={{fontSize:12,color:C.faint,marginTop:2}}>Janela mensal: Aberto até 31 de Julho⁠
             </div>
             <span style={{fontSize:12,fontWeight:700,color:C.green,background:C.greenSoft,padding:"5px 10px",borderRadius:99,whiteSpace:"nowrap"}}>{dia<=15?`Aberto · faltam ${diasFecha}d`:"Demonstração"}</span>
           </div>
